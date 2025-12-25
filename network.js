@@ -1,8 +1,12 @@
 const player = document.querySelector('.player');
 const userInput = document.querySelector('.userInput');
 const allInput = document.querySelector('.allInput');
+const mainAudio = document.querySelector('.mainAudio');
+
 const directions = ['left', 'right', 'up', 'down'];
 const rect = player.getBoundingClientRect();
+
+
 const defaultPlayerPosition = {
     left: rect.left,
     right: rect.right,
@@ -16,8 +20,13 @@ const allowedCommands = [
     'hi',
     'calculate: calculate 12 * 12',
     'change color to (color)',
-    'say: say i love yannix'
+    'say: say i love yannix',
+    'play music'
 ];
+const music = {
+    mainMusic: mainAudio,
+    backupMusic: null
+}
 
 let instruction = '';
 let playerFunctions = ['jump', 'move']
@@ -217,4 +226,42 @@ document.addEventListener('keydown', (e) => {
         }, 5000);
         return;
     }
-})
+
+    if (userWant.toLowerCase() == 'play music' || userWant.toLowerCase().startsWith('play music')) {
+        const defaultMusic = Object(music.mainMusic);
+        const musicToPlay = userWant.replace(/^play music\s*/i, '').trim();
+
+        if (musicToPlay) {
+            console.log('no backup music yet'); 
+            userInput.value = 'no other music available' ;
+
+            setInterval(() => {
+                userInput.value = '';
+            }, 5000);
+            return;
+        }
+        defaultMusic.play();
+        console.log('music played');
+        let rotate = 0;
+        let musicPlaying = true;
+        let color = [0, 0, 0];
+
+        function rotatePlayer() {
+            if (!musicPlaying) return player.style.transform = 'rotate(0deg)';
+
+            rotate += 1;
+            player.style.transform = `rotate(${rotate}deg)`;
+        }
+
+        setInterval (() => {
+            rotatePlayer();
+        }, 10)
+
+        setInterval(() => {
+            musicPlaying = false;
+            console.log('stopped playing');
+            return;
+        }, 23000);
+        
+    }
+});
