@@ -44,8 +44,8 @@
     box-shadow: 2px 5px 2px rgb(56, 56, 56);
 }
 
-.instrucion {
-    text-shadow: 2px 4px 2px rgb(224, 224, 224);
+.instruction {
+    font-weight: bolder;
     font-size: 40px;
     margin: 20px;
     font-family: sans-serif;
@@ -363,7 +363,7 @@ body {
     box-shadow: 5px 10px 5px grey;
     left: 0px;
     top: 100px;
-    z-index: -1;
+    z-index: -10;
 }
 
 .ground {
@@ -378,4 +378,267 @@ body {
     width: 100%;
     height: 200px;
     border-radius: 40%;
+}
+
+.cloudsAnim {
+    animation: cloudsMove 10s ease-out infinite;
+}
+
+@keyframes cloudsMove {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(30px, 5px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        overflow: hidden;
+    }
+    .mainContent {
+        width: 100%;
+    }
+    .ground {
+        align-items: center;
+        justify-content: center;
+        left: -20px;
+        bottom: -100px;
+    }
+    .allInput {
+        left: -20px;
+        scale: calc(70%);
+        margin-top: -150px;
+    }
+    .importantInfo {
+        right: -10px;
+        scale: calc(70%);
+        margin-top: -135px;
+    }
+    .player {
+        scale: calc(70%);
+        left: 250px;
+    }
+    .mountain {
+        scale: calc(70%);
+        bottom: 150px;
+    }
+    .instruction {
+        scale: calc(70%);
+        margin-bottom: -30px;
+        margin-top: -20px;
+
+    }
+    .clouds {
+        scale: calc(60%);
+        left: 10px;
+    }
+    .watermark {
+        scale: calc(70%);
+    }
+    .userInput {
+        scale: 70%;
+    }
+}
+
+@media (min-width: 601px) {
+    body {
+        overflow: hidden;
+    }
+    .mainContent {
+        width: 100%;
+    }
+    .ground {
+        align-items: center;
+        justify-content: center;
+        left: -20px;
+        bottom: -100px;
+    }
+    .allInput {
+        left: -30px;
+        scale: calc(75%);
+        margin-top: -150px;
+    }
+    .importantInfo {
+        right: -20px;
+        scale: calc(75%);
+        margin-top: -135px;
+    }
+    .player {
+        scale: calc(75%);
+        left: 250.5px;
+    }
+    .mountain {
+        scale: calc(70%);
+        bottom: 150px;
+    }
+    .instruction {
+        scale: calc(75%);
+        margin-bottom: -30px;
+        margin-top: -20px;
+
+    }
+    .clouds {
+        scale: calc(65%);
+        left: 10px;
+    }
+    .watermark {
+        scale: calc(75%);
+    }
+    .userInput {
+        scale: 70%;
+    }
+}
+
+@media (min-width: 768px) {
+    body {
+        overflow: hidden;
+    }
+    .mainContent {
+        width: 100%;
+    }
+    .ground {
+        align-items: center;
+        justify-content: center;
+        left: -20px;
+        bottom: -100px;
+    }
+    .allInput {
+        left: -20px;
+        scale: calc(80%);
+        margin-top: -150px;
+    }
+    .importantInfo {
+        right: 40px;
+        scale: calc(80%);
+        margin-top: -135px;
+    }
+    .player {
+        scale: calc(80%);
+        left: 335.5px;
+    }
+    .mountain {
+        scale: calc(70%);
+        bottom: 150px;
+    }
+    .instruction {
+        scale: calc(80%);
+        margin-bottom: -30px;
+        margin-top: -20px;
+
+    }
+    .clouds {
+        scale: calc(70%);
+        left: 10px;
+    }
+    .watermark {
+        scale: calc(80%);
+    }
+    .userInput {
+        scale: 80%;
+    }
+}
+
+@media (min-width: 992px) {
+    body {
+        overflow: hidden;
+    }
+    .mainContent {
+        width: 100%;
+    }
+    .ground {
+        align-items: center;
+        justify-content: center;
+        left: -30px;
+        bottom: -50px;
+    }
+    .allInput {
+        left: 10px;
+        scale: calc(90%);
+        margin-top: -75px;
+    }
+    .importantInfo {
+        right: 80px;
+        scale: calc(90%);
+        margin-top: -75px;
+    }
+    .player {
+        scale: calc(90%);
+        left: 446px;
+    }
+    .mountain {
+        scale: calc(90%);
+        bottom: 300px;
+    }
+    .instruction {
+        scale: calc(90%);
+        margin-bottom: -10px;
+        margin-top: 0px;
+
+    }
+    .clouds {
+        scale: calc(80%);
+        left: 10px;
+    }
+    .watermark {
+        scale: calc(90%);
+    }
+    .userInput {
+        scale: 90%;
+    }
+}
+
+@media (min-width: 1200px) {
+    body {
+        overflow: hidden;
+    }
+    .mainContent {
+        width: 100%;
+    }
+    .ground {
+        align-items: center;
+        justify-content: center;
+        bottom: -100px;
+        scale: calc(110%);
+    }
+    .allInput {
+        left: 40px;
+        scale: calc(120%);
+        margin-top: -20px;
+    }
+    .importantInfo {
+        right: 40px;
+        scale: calc(120%);
+        margin-top: -20px;
+    }
+    .player {
+        scale: calc(120%);
+        left: 550px;
+    }
+    .mountain {
+        scale: calc(100%);
+        bottom: 250px;
+    }
+    .instruction {
+        scale: calc(100%);
+        margin-bottom: 10px;
+        margin-top: 10px;
+
+    }
+    .clouds {
+        scale: calc(100%);
+        margin-left: -400px;
+        margin-top: -150px;
+        z-index: -10;
+    }
+    .watermark {
+        scale: calc(100%);
+    }
+    .userInput {
+        scale: 100%;
+    }
 }
