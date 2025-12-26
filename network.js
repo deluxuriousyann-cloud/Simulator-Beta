@@ -261,7 +261,7 @@ document.addEventListener('keydown', (e) => {
             musicPlaying = false;
             console.log('stopped playing');
             return;
-        }, 23000);
+        }, 238000);
         
     }
 });
